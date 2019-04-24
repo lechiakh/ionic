@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Information journal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+ 
+  <ion-searchbar placeholder="Title" [(ngModel)]="searchTerm" (ionChange)="searchChanged($event)"></ion-searchbar>
+   <ion-searchbar placeholder="Author" [(ngModel)]="author" (ionChange)="searchChanged($event)"></ion-searchbar>
+
+ 
+  <ion-list> 
+ 
+    <ion-item button *ngFor="let item of (results | async)">
+      
+ 
+      <ion-label text-wrap>
+        <h3>Titre : {{ item.title }}</h3>
+		Abstract : {{ item.abstract }}
+      </ion-label>
+
+       
+    <ion-label class="alignme">Date : {{ item.publication_date}}</ion-label>
+   <ion-datetime  display-format="MMM DD, YYYY"></ion-datetime>
+ 
+    </ion-item>
+ 
+  </ion-list>
+ 
+</ion-content>
+
