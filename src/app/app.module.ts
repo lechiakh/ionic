@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { HttpClientModule } from '@angular/common/http';
+import { Network } from '@ionic-native/network/ngx';
+import { BatteryStatus } from '@ionic-native/battery-status/ngx';
+
 
 
 
@@ -20,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
 	  Geolocation ,
+    Network ,
+    BatteryStatus ,
 	
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
